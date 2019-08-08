@@ -42,7 +42,7 @@
 ###############################################################################
 
 function getRandomAnimal() {
-        $TheAnimals = array("Aardvark","Albatross","Alligator","Alpaca","Angelfish","Ant","Anteater","Antelope","Ape","Armadillo","Baboon","Badger","Bandicoot","Barb","Barnacle","Barracuda","Bat
+        $TheAnimals = array("Aardvark","Albatross","Alligator","Alpaca","Angelfish","Ant","Anteater","Antelope","Ape","Armadillo","Baboon","Badger","Bandicoot","Barb","Barnacle","Barracuda","Bat","Beagle","Bear","Beaver","Bee","Beetle","Bird","Bison","Bloodhound","Boar","Bobcat","Bombay","Bongo","Bonobo","Booby","Buffalo","Bulldog","Bullfrog","Butterfly","Camel","Cat","Caterpillar","Catfish","Cattle","Cheetah","Chicken","Chipmunk","Cichlid","Clam","Cobra","Cockroach","Cod","Collie","Coral","Cormorant","Cougar","Cow","Coyote","Crab","Crane","Crocodile","Crow","Cuttlefish","Dachshund","Dalmatian","Deer","Dhole","Dingo","Dog","Dogfish","Dolphin","Donkey","Dove","Duck","Eagle","Earwig","Eel","Elephant","Elk","Emu","Falcon","Ferret","Finch","Fish","Fly","Fox","Frog","Panda","Gibbon","Giraffe","Goat","Goldfinch","Goldfish","Goose","Gopher","Gorilla","Grasshopper","Greyhound","Guppy","Hamster","Hare","Harrier","Hawk","Hedgehog","Heron","Herring","Hippopotamus","Hornet","Horse","Human","Hummingbird","Hyena","Iguana","Impala","Insect","Jackal","Jaguar","Jay","Jellyfish","Kangaroo","Kingfisher","Kiwi","Koala","Ladybird","Lapwing","Lark","Lemming","Lemur","Leopard","Liger","Lion","Lionfish","Lizard","Llama","Lobster","Locust","Louse","Lynx","Lyrebird","Macaw","Magpie","Mallard","Mayfly","Meerkat","Millipede","Mink","Mole","Molly","Mongoose","Mongrel","Monkey","Moose","Mosquito","Moth","Mouse","Mule","Newt","Nightingale","Ocelot","Octopus","Opossum","Ostrich","Otter","Owl","Ox","Oyster","Panther","Parrot","Partridge","Peacock","Peafowl","Pelican","Penguin","Persian","Pheasant","Pig","Pike","Piranha","Platypus","Pony","Poodle","Porcupine","Porpoise","Possum","Prawn","Puffin","Pug","Puma","Quail","Rabbit","Raccoon","Rail","Ram","Rat","Rattlesnake","Raven","Reindeer","Rhinoceros","Robin","Rook","Rottweiler","Salamander","Salmon","SandDollar","Sandpiper","Sardine","Scorpion","Seahorse","Seal","Shark","Sheep","Shrew","Shrimp","Skunk","Sloth","Snail","Snake","Snowshoe","Somali","Sparrow","Spider","Sponge","Squid","Squirrel","Starfish","Starling","Stingray","Stinkbug","Stork","Swallow","Swan","Tang","Termite","Tetra","Tiger","Toad","Tortoise","Toucan","Trout","Turkey","Turtle","Viper","Vulture","Wallaby","Walrus","Warthog","Wasp","Weasel","Whale","Wolf","Wombat","Woodpecker","Worm","Wren","Yak","Zebra","Zonkey");
         #var_dump($TheAnimals);
         $randIndex = array_rand($TheAnimals);
         $myAnimal = $TheAnimals[$randIndex];
@@ -83,6 +83,8 @@ function getMyRandomPass() {
 }
 
 
+
+
 #############################################
 ##   __  __    _    ___ _   _
 ##  |  \/  |  / \  |_ _| \ | |
@@ -92,6 +94,7 @@ function getMyRandomPass() {
 #
 #############################################
 #
+
 
 
 $myColumnsCount = "6";
@@ -180,4 +183,3 @@ echo "
 
 ### End PHP
 ?>
-
