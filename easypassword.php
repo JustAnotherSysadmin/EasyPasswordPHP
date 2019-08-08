@@ -155,20 +155,19 @@ echo "<!DOCTYPE html>
     <table>
       <tbody>
         <tr>
-          <th colspan=\"".$myColumnsCount."\" class=\"myTitle\">Pseudo Semi-Random Temporary Passwords</td>
+          <th colspan=\"".$myColumnsCount."\" class=\"myTitle\">Pseudo Semi-Random Temporary Passwords</th>
         </tr>
 ";
 
 # rows
 for ($i = 1; $i <= $myRowsCount; $i++) {
-        echo "        <tr>";
+        echo "        <tr>\n";
         # columns
         for ($y = 1; $y <= $myColumnsCount; $y++) {
                 echo "          <td>";
-                echo "<span class=\"myPass\">".getMyRandomPass()."</span>";
-                echo "          </td>";
+                echo "<span class=\"myPass\">".getMyRandomPass()."</span></td>\n";
         } //columns
-        echo "        </tr>";
+        echo "        </tr>\n";
 } //rows
 
 echo "
