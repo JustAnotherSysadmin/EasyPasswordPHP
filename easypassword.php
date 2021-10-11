@@ -173,7 +173,7 @@ for ($i = 1; $i <= $myRowsCount; $i++) {
 echo "
       </tbody>
     </table>
-    <span class=\"myName\">by John Lucas
+    <span class=\"myName\">by John Lucas <a href=\"https://github.com/JustAnotherSysadmin/EasyPasswordPHP\">EasyPasswordPHP on GitHub</a>
     </span>
   </body>
 </html>
