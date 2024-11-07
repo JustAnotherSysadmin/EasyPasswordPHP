@@ -5,7 +5,7 @@
 ##
 ##  AUTHOR:   John Lucas
 ##  CREATED ON:  2019-08-08
-##
+##  LAST UPDATED:  2024-11-07
 ##
 ###############################
 #
@@ -49,6 +49,15 @@ function getRandomAnimal() {
         return $myAnimal;
 } //getRandomAnimal();
 
+
+function getRandomEmotion() {
+	$TheEmotions = array("Accepting","Admireable","Adoring","Affectate","Afraid","Agitated","Agonizing","Aggressive","Alarmed","Alienating","Amazing","Ambivalent","Amusing","Angry","Anguished","Annoyed","Anticipating","Anxious","Apathetic","Apprehensive","Arrogant","Assertive","Astonished","Attentive","Attractive","Averse","Awed","Baffled","Bewildered","Bitter","Bittersweet","Blissful","Bored","Brazen","Brooding","Calm","Carefree","Careless","Caring","Charitable","Cheeky","Cheerfulness","Claustrophobic","Coercive","Comfortable","Confident","Confused","Contemptful","Contented","Courageous","Cowardly","Cruel","Curious","Cynical","Dazed","Dejected","Delighted","Demoralized","Depressed","Desireable","Despaired","Determined","Disappointed","Disbeliving","Discombobulated","Discomforted","Discontent","Disgruntled","Disgust","Disheartened","Dislikable","Dismayed","Disoriented","Dispirited","Displeasured","Distractable","Distressed","Disturbed","Domineering","Doubtful","Dreadful","Driven","Dumbstruck","Eager","Ecstatic","Elative","Embarrassed","Empathatic","Enchanted","Enjoyed","Enlightened","Ennui","Enthusiastic","Envious","Empathetic","Euphoric","Exasperated","Excited","Expecting","Fascinating","Fearful","Flakey","Focused","Fond","Friendly","Frightened","Frustrated","Furious","Gleeful","Gloomy","Glum","Grateful","Greedy","Grief-filled","Grouchy","Grumpy","Guilty","Happy","Hateful","Helpless","Homesick","Hopeful","Hopeless","Horrified","Hospitable","Humiliated","Humility","Hurt","Hysterical","Idle","Impatient","Indiffert","Indignant","Infatuated","Infuriated","Insecure","Insightful","Insulted","Interested","Intrigued","Irritated","Isolated","Jealous","Jovial","Joyous","Jubilated","Kind","Lazy","Likable","Loathing","Lonely","Longing","Loopy","Lovly","Lustful","Mad","Melancholy","Miserable","Miserliness","Mixed-up","Modest","Moody","Mortified","Mystified","Nasty","Nauseated","Negative","Neglectful","Nervous","Nostalgic","Numb","Obstinate","Offended","Optimistic","Outragous","Overwhelmed","Panicked","Paranoid","Passioniate","Patient","Pensive","Perplexed","Persevering","Pessimistic","Pitiful","Pleased","Pleasured","Polite","Positive","Possessive","Powerless","Prideful","Puzzled","Raging","Rash","Rattled","Regretful","Rejected","Relaxed","Relieved","Reluctant","Remorseful","Resenting","Resigned","Restless","Revolting","Ruthless","Sad","Satisfied","Scared","Schadenfreuded","Scornful","Self-caring","Self-compassionate","Self-confident","Self-conscious","Self-critical","Self-loathing","Self-motivated","Self-pity","Self-respecting","Self-understanding","Sentimentality","Serenity","Shameful","Shameles","Shocked","Smug","Sorrowful","Spiteful","Stressed","Strong","Stubborn","Stuck","Submissive","Suffering","Sullenness","Surprised","Suspensful","Suspicious","Sympathy","Tenderness","Tension","Terror","Thankful","Thrilled","Tired","Tolerant","Tormented","Triumphant","Troubled","Trusting","Uncertain","Undermined","Uneasy","Unhappy","Unnerved","Unsettled","Unsure","Upset","Vengeful","Vicious","Vigilant","Vulnerable","Weak","Woeful","Worried","Worthy","Wrath");
+	$randIndex = array_rand($TheEmotions); 
+        $myEmotion = $TheEmotions[$randIndex];
+	//$myEmotion = "Happy";
+	return $myEmotion;
+} //getRandomEmotion
+
 function getRandomColor() {
         $TheColors = array("Red", "Orange", "Yellow", "Green", "Cyan", "Blue", "Indigo", "Violet", "Purple", "Magenta", "Pink", "Brown", "White", "Gray", "Black");
         #var_dump($TheColors);
@@ -77,8 +86,18 @@ function getRandomPunc() {
         return $mychar;
 }
 
+function getEmotionOrColor() {
+        $zarray = array(getRandomColor(),getRandomEmotion());
+        //$zarray = array(getRandomEmotion());
+        //$zarray = array(getRandomColor());
+        $randIndex = array_rand($zarray);
+        $EoC = $zarray[$randIndex];
+        return $EoC;
+}
+
 function getMyRandomPass() {
-        $mypass = getRandomSymbol().getRandomNum().getRandomColor().getRandomAnimal().getRandomPunc();
+        //$mypass = getRandomSymbol().getRandomNum().getRandomColor().getRandomAnimal().getRandomPunc();
+        $mypass = getRandomSymbol().getRandomNum().getEmotionOrColor().getRandomAnimal().getRandomPunc();
         return $mypass;
 }
 
@@ -98,7 +117,7 @@ function getMyRandomPass() {
 
 
 $myColumnsCount = "6";
-$myRowsCount = "40";
+$myRowsCount = "30";
 
 echo "<!DOCTYPE html>
 <html>
@@ -173,7 +192,7 @@ for ($i = 1; $i <= $myRowsCount; $i++) {
 echo "
       </tbody>
     </table>
-    <span class=\"myName\">by John Lucas <a href=\"https://github.com/JustAnotherSysadmin/EasyPasswordPHP\">EasyPasswordPHP on GitHub</a>
+    <span class=\"myName\">by John Lucas
     </span>
   </body>
 </html>
