@@ -3,9 +3,11 @@
 ##
 ##  PURPOSE:  Generate an easy to remember temporary password.
 ##
-##  AUTHOR:   John Lucas
+##  AUTHOR:   JustAnotherSysadmin
+##  
 ##  CREATED ON:  2019-08-08
-##  LAST UPDATED:  2024-11-07
+##  LAST UPDATED: 2025-06-19
+##
 ##
 ###############################
 #
@@ -78,6 +80,14 @@ function getRandomNum() {
         $znum = rand(0, 9);
         return $znum;
 }
+
+function getRandomUnicode() {
+        $zarray = array("📖", "ツ", "㋡", "유", "💾", "💩", "🐂", "🌎", "😀", "😎");
+        $randIndex = array_rand($zarray);
+        $mychar = $zarray[$randIndex];
+        return $mychar;
+}
+
 
 function getRandomPunc() {
         $zarray = array("", "!", "?", ".");
@@ -171,7 +181,7 @@ echo "<!DOCTYPE html>
     </style>
   </head>
   <body>
-    <table>
+    <table id=\"theTable\">
       <tbody>
         <tr>
           <th colspan=\"".$myColumnsCount."\" class=\"myTitle\">Pseudo Semi-Random Temporary Passwords</th>
@@ -189,12 +199,50 @@ for ($i = 1; $i <= $myRowsCount; $i++) {
         echo "        </tr>\n";
 } //rows
 
+$myColumnsCount = "6";
+$myRowsCount = "5";
+
+# rows
+for ($i = 1; $i <= $myRowsCount; $i++) {
+        echo "        <tr>\n";
+        # columns
+        for ($y = 1; $y <= $myColumnsCount; $y++) {
+                echo "          <td>";
+                echo "<span class=\"myPass\">".getMyRandomPass().getRandomUnicode()."</span></td>\n";
+        } //columns
+        echo "        </tr>\n";
+} //rows
+
 echo "
       </tbody>
     </table>
-    <span class=\"myName\">by John Lucas
+    <span class=\"myName\">Source at: <a href=\"https://github.com/JustAnotherSysadmin/EasyPasswordPHP\">https://github.com/JustAnotherSysadmin/EasyPasswordPHP</a>
     </span>
-  </body>
+";
+
+echo " 
+
+<!-- This script by Kat Dodd.  Thanks Kat. -->
+
+  <script>
+    const table = document.getElementById('theTable');
+
+    table.addEventListener('click', function(event) {
+      const cell = event.target;
+      if (cell.tagName === 'TD') {
+        const text = cell.textContent;
+
+        navigator.clipboard.writeText(text)
+          .then(() => {
+            <!--alert(`Copied: \"\${text}\"`);-->
+          })
+          .catch(err => {
+            console.error('Copy failed', err);
+          });
+      }
+    });
+  </script>
+    </body>
 </html>
 ";
 
