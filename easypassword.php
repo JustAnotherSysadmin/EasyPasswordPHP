@@ -87,7 +87,7 @@ function getRandomNum6() {
 }
 
 function getRandomUnicode() {
-        $zarray = array("📖", "ツ", "㋡", "유", "💾", "💩", "🐂", "🌎", "😀", "😎");
+        $zarray = array("ðŸ“–", "ãƒ„", "ã‹¡", "ìœ ", "ðŸ’¾", "ðŸ’©", "ðŸ‚", "ðŸŒŽ", "ðŸ˜€", "ðŸ˜Ž");
         $randIndex = array_rand($zarray);
         $mychar = $zarray[$randIndex];
         return $mychar;
@@ -188,25 +188,48 @@ echo "<!DOCTYPE html>
   <body>
     <table id=\"theTable\">
       <tbody>
+";
+
+###########################################################################
+
+
+echo "
         <tr>
-          <th colspan=\"".$myColumnsCount."\" class=\"myTitle\">Pseudo Semi-Random Temporary Passwords</th>
+          <th colspan=\"".$myColumnsCount."\" class=\"myTitle\">Random 6 digit PINs</th>
         </tr>
 ";
 
+$myColumnsCount = "6";
+$myRowsCount = "2";
+
 # random numbers
 # rows
-for ($i = 1; $i <= 2; $i++) {
+for ($i = 1; $i <= $myRowsCount; $i++) {
         echo "        <tr>\n";
         # columns
-        for ($y = 1; $y <= $myColumnsCoun; $y++) {
+        for ($y = 1; $y <= $myColumnsCount; $y++) {
                 echo "          <td>";
                 echo "<span class=\"myPass\">".getRandomNum6()."</span></td>\n";
         } //columns
         echo "        </tr>\n";
 } //rows
 
+
+
+
+
+###########################################################################
+
+
+
+echo "
+        <tr>
+          <th colspan=\"".$myColumnsCount."\" class=\"myTitle\">Pseudo Semi-Random Temporary Passwords</th>
+        </tr>
+";
+
 $myColumnsCount = "6";
-$myRowsCount = "5";
+$myRowsCount = "20";
 
 # Random passwords
 # rows
@@ -219,6 +242,19 @@ for ($i = 1; $i <= $myRowsCount; $i++) {
         } //columns
         echo "        </tr>\n";
 } //rows
+
+
+
+###########################################################################
+
+
+
+echo "
+        <tr>
+          <th colspan=\"".$myColumnsCount."\" class=\"myTitle\">Pseudo Semi-Random Temporary Passwords with Unicode Characters</th>
+        </tr>
+";
+
 
 $myColumnsCount = "6";
 $myRowsCount = "5";
@@ -234,6 +270,9 @@ for ($i = 1; $i <= $myRowsCount; $i++) {
         } //columns
         echo "        </tr>\n";
 } //rows
+
+
+###########################################################################
 
 echo "
       </tbody>
@@ -271,3 +310,4 @@ echo "
 
 ### End PHP
 ?>
+
