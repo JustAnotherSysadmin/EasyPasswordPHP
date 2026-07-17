@@ -195,10 +195,10 @@ echo "<!DOCTYPE html>
 
 # random numbers
 # rows
-for ($i = 1; $i <= $myRowsCount; $i++) {
+for ($i = 1; $i <= 2; $i++) {
         echo "        <tr>\n";
         # columns
-        for ($y = 1; $y <= $myColumnsCount; $y++) {
+        for ($y = 1; $y <= $myColumnsCoun; $y++) {
                 echo "          <td>";
                 echo "<span class=\"myPass\">".getRandomNum6()."</span></td>\n";
         } //columns
