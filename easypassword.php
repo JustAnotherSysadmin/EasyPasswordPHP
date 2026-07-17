@@ -6,7 +6,7 @@
 ##  AUTHOR:   JustAnotherSysadmin
 ##  
 ##  CREATED ON:  2019-08-08
-##  LAST UPDATED: 2025-06-19
+##  LAST UPDATED: 2026-07-17
 ##
 ##
 ###############################
@@ -78,6 +78,11 @@ function getRandomSymbol() {
 
 function getRandomNum() {
         $znum = rand(0, 9);
+        return $znum;
+}
+
+function getRandomNum6() {
+        $znum = rand(100000, 999999);
         return $znum;
 }
 
@@ -188,6 +193,22 @@ echo "<!DOCTYPE html>
         </tr>
 ";
 
+# random numbers
+# rows
+for ($i = 1; $i <= $myRowsCount; $i++) {
+        echo "        <tr>\n";
+        # columns
+        for ($y = 1; $y <= $myColumnsCount; $y++) {
+                echo "          <td>";
+                echo "<span class=\"myPass\">".getRandomNum6()."</span></td>\n";
+        } //columns
+        echo "        </tr>\n";
+} //rows
+
+$myColumnsCount = "6";
+$myRowsCount = "5";
+
+# Random passwords
 # rows
 for ($i = 1; $i <= $myRowsCount; $i++) {
         echo "        <tr>\n";
@@ -202,6 +223,7 @@ for ($i = 1; $i <= $myRowsCount; $i++) {
 $myColumnsCount = "6";
 $myRowsCount = "5";
 
+# Random passwords with Unicode
 # rows
 for ($i = 1; $i <= $myRowsCount; $i++) {
         echo "        <tr>\n";
